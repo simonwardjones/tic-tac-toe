@@ -136,3 +136,4 @@ models/
 
 # File extensions
 *.csv
+.vscode/
