@@ -14,14 +14,14 @@ class Board:
     }
 
     def __init__(self, n_tiles=9, tiles=None):
-        self.ntiles= 9
+        self.ntiles = 9
         if tiles:
-            self.tiles= tiles
+            self.tiles = tiles
         else:
-            self.tiles= [tictactoe_pb2.EMPTY for _ in range(self.ntiles)]
+            self.tiles = [tictactoe_pb2.EMPTY for _ in range(self.ntiles)]
 
     def __repr__(self):
-        counters= [self.Counters[tile] for tile in self.tiles]
+        counters = [self.Counters[tile] for tile in self.tiles]
         if self.ntiles == 9:
             return board_format.format(*counters)
         return MessageToJson(self.board_message)
