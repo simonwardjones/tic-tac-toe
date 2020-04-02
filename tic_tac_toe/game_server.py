@@ -1,5 +1,5 @@
-import sys
 import logging
+import sys
 from concurrent import futures
 
 import grpc
@@ -14,6 +14,7 @@ from server_ports import PORTS
 logging.basicConfig()
 logger = logging.getLogger(__file__)
 logger.setLevel(logging.INFO)
+
 
 class GameService(tictactoe_pb2_grpc.GameServiceServicer):
 
