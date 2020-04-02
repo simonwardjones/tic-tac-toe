@@ -1,10 +1,9 @@
+import logging
+
 from google.protobuf.json_format import MessageToDict, MessageToJson
 
 import tictactoe_pb2
-
 from board import Board
-
-import logging
 
 logging.basicConfig()
 logger = logging.getLogger(__file__)
