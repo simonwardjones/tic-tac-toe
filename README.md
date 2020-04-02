@@ -1,3 +1,24 @@
+# tic-tac-toe with gRPC
+
+This is a protocol buffer implementation of tic-tac-toe!
+
 # Playing with protobuffers
 
-python -m grpc_tools.protoc -I protos --python_out=protos --grpc_python_out=protos tictactoe.proto 
+    1. set up virtualenv and install reqs
+    ```bash
+    python -m venv venv
+    . venv/bin activate
+    pip install -U pip
+    pip install -r requirements.txt
+    ```
+
+    2. run the game service and two player services
+    ```bash
+    make run_players_and_game
+    ```
+
+    3. run the game
+    ```bash
+    make play_game
+    ```
+
