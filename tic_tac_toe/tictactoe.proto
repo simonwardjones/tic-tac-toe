@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+enum TileState {
+    EMPTY = 0;
+    X = 1;
+    O = 2;
+}
+
+enum GameState {
+    WAITING_TO_START = 0;
+    RUNNING = 1;
+    X_WIN = 2;
+    O_WIN = 3;
+    DRAW = 4;
+}
+
+message Board {
+    repeated TileState tiles = 1;
+}
+
+message Game {
+    Board board = 1;
+    TileState last_player = 2;
+    GameState game_state = 3;
+}
+
+message Move {
+    TileState player = 1;
+    int32 tile_id = 2;
+}
+
+message GameAndMove {
+    Game game = 1;
+    Move move = 2;
+}
+
+service GameService {
+    rpc AttemptMove(GameAndMove) returns (Game);
+}
+
+service PlayerService {
+    rpc Play(Game) returns (Move);
+}
+
