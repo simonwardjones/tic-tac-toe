@@ -1,15 +1,15 @@
-import sys
 import logging
+import sys
 from concurrent import futures
 from random import choice
 
 import grpc
 from google.protobuf.json_format import MessageToDict, MessageToJson
-from server_ports import PORTS
+
 import tictactoe_pb2
 import tictactoe_pb2_grpc
 from game import Game
-
+from server_ports import PORTS
 
 logging.basicConfig()
 logger = logging.getLogger(__file__)
